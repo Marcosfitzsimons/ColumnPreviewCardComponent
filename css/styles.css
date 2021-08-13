@@ -1,0 +1,221 @@
+/* ==============
+    Color Palette
+    & Global Styles:
+============== */
+
+:root {
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan    : hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+
+    /* ==============
+        paragraphs
+    ============== */
+    --transparentWhite: hsla(0, 0%, 100%, 0.75);
+
+    /* ==============
+        background, headings, buttons
+    ============== */
+    --veryLightGray: hsl(0, 0%, 95%);
+
+    --fuenteHeaders  : 'Big Shoulders Display', cursive;
+    /* - weights     : 700 */
+    --fuentePrincipal: 'Lexend Deca', sans-serif;
+    /* - weights     : 400 */
+}
+
+html {
+    box-sizing: border-box;
+    font-size : 62.5%;
+}
+
+html, body {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuentePrincipal);
+    font-size  : 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120rem;
+    background-color: var(--transparentWhite);
+}
+
+@media (min-width: 768px) {
+    body {
+        height: inherit;
+    }
+}
+
+/* ==============
+    Utilities
+============== */
+
+.contenedor {
+    display: none;
+    width : min(90%, 120rem);
+    min-width: 32rem;
+}
+
+.texto-centrado {
+    text-align: center;
+}
+
+.article--bg-orange {
+    background-color: var(--brightOrange);
+}
+
+.article--bg-cyan {
+    background-color: var(--darkCyan);
+}
+
+.article--bg-darkCyan {
+    background-color: var(--veryDarkCyan);
+}
+
+/* ==============
+    Button Styles
+============== */
+
+.button__principal {
+    background-color: var(--veryLightGray);
+    margin-top      : 1.5rem;
+    padding         : 1.5rem 1rem;
+    border-style    : none;
+    border-radius   : 5rem;
+    cursor          : pointer;
+    transition      : background-color .5s ease;
+    transition      : font-size .5s ease;
+    transition      : color .5s ease;
+    width           : 100%;
+}
+
+.button__principal:hover {
+    background-color: inherit;
+    border          : .2rem solid var(--veryLightGray);
+    color           : var(--veryLightGray);
+    font-size       : 1.55rem;
+}
+
+.button--colorOrange {
+    color: var(--brightOrange);
+}
+
+.button--colorDarkCyan {
+    color: var(--darkCyan)
+}
+
+.button--colorVeryDarkCyan {
+    color: var(--veryDarkCyan);
+}
+
+@media (min-width: 768px) {
+    .button__principal {
+        margin-top: 6rem;
+        width     : 15rem;
+    }
+}
+
+/* ==============
+    Custom Styles
+============== */
+
+.title {
+    cursor: pointer;
+    font-size: 3rem;
+    font-family: var(--fuenteHeaders);
+    color: var(--veryDarkCyan);
+    text-shadow: -3px 2px 7px rgba(142, 150, 150, 1);
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 3.8rem;
+    }
+}
+
+/* ==============
+    Main
+============== */
+
+@media (min-width: 768px) {
+    .main {
+        display: flex;
+    }
+}
+
+/* ==============
+    Article
+============== */
+
+.article {
+    padding      : 4rem;
+    color        : var(--veryLightGray);
+    line-height  : 1.5;
+}
+
+@media (min-width: 768px) {
+    .article {
+        padding: 5rem 4rem;
+        width: 25%;
+        overflow: hidden;
+        transition: width .3s ease-in-out;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+    }
+    .article-active {
+        width: 50%;
+    }
+}
+
+.article:first-of-type {
+    border-radius: 1rem 1rem 0 0;
+}
+
+.article:last-of-type {
+    border-radius: 0 0 1rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .article:first-of-type {
+        border-radius: 1rem 0 0 1rem;
+    }
+    .article:last-of-type {
+        border-radius: 0 1rem 1rem 0;
+    }
+}
+
+/* ==============
+    Contenido
+============== */
+
+.contenido__h2 {
+    font-family   : var(--fuenteHeaders);
+    text-transform: uppercase;
+    font-size     : 2.8rem;
+}
+
+.contenido__p {
+    color: var(--transparentWhite);
+}
+
+@media (min-width: 768px) {
+    .contenido {
+        flex-grow: 1;
+    }
+    .contenido__h2 {
+        font-size: 3.5rem;
+    }
+    .contenido__p {
+        line-height: 2;
+    }
+}
